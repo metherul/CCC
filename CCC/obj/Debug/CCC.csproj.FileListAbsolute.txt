@@ -1,0 +1,6 @@
+C:\C# Projects\CCC\CCC\bin\Debug\CCC.exe.config
+C:\C# Projects\CCC\CCC\bin\Debug\CCC.exe
+C:\C# Projects\CCC\CCC\bin\Debug\CCC.pdb
+C:\C# Projects\CCC\CCC\obj\Debug\CCC.csprojResolveAssemblyReference.cache
+C:\C# Projects\CCC\CCC\obj\Debug\CCC.exe
+C:\C# Projects\CCC\CCC\obj\Debug\CCC.pdb
