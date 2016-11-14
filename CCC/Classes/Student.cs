@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace CCC
 {
-    class Student
+    public class Student
     {
         // Stuff that isn't going to change.
         public string Name { get; set; }
         public string StudentID { get; set; }
+        public string ClassPeriod { get; set; }
         public string BakeryName { get; set; }
         public string GameVersion { get; set; }
-        public string ClassPeriod { get; set; }
-        public string StartTime { get; set; }
+        public string GameStartTime { get; set; }
         public bool Active { get; set; }
 
         // Stuff that will change.
@@ -22,27 +22,34 @@ namespace CCC
         public string CookieCountAllTime { get; set; }
         public string LastSaveCode { get; set; }
         public string AccessTimeStamp { get; set; }
-        public string SaveTime { get; set; }
+        public string GameSaveTime { get; set; }
         public int AccessCount { get; set; }
 
         // Archives
         public List<string> CookieCountArchive { get; set; }
         public List<string> CookieCountAllTimeArchive { get; set; }
-        public List<string> SaveTimeArchive { get; set; }
+        public List<string> GameSaveTimeArchive { get; set; }
         public List<string> SaveCodeArchive { get; set; }
         public List<string> AccessTimeStampArchive { get; set; }
 
-        Student()
+        public Student()
         {
-
+            CookieCountArchive = new List<string>();
+            CookieCountAllTimeArchive = new List<string>();
+            GameSaveTimeArchive = new List<string>();
+            SaveCodeArchive = new List<string>();
+            AccessTimeStampArchive = new List<string>();
         }
 
         /// <summary>
         /// Will initialize a new student.
         /// </summary>
-        public void Initialize()
+        public void Initialize(SaveCode saveCode)
         {
-            
+            BakeryName = saveCode.BakeryName;
+            GameVersion = saveCode.GameVersion;
+            GameStartTime = saveCode.StartTime;
+            Active = true;
         }
 
         /// <summary>
@@ -50,11 +57,20 @@ namespace CCC
         /// </summary>
         public void Archive()
         {
-            CookieCountArchive.Add(CookieCount);
-            CookieCountAllTimeArchive.Add(CookieCountAllTime);
-            SaveTimeArchive.Add(SaveTime);
-            SaveCodeArchive.Add(LastSaveCode);
-            AccessTimeStampArchive.Add(AccessTimeStamp);
+            if (CookieCount != null)
+                CookieCountArchive.Add(CookieCount);
+
+            if (CookieCountAllTime != null)
+                CookieCountAllTimeArchive.Add(CookieCountAllTime);
+
+            if (GameSaveTime != null)
+                GameSaveTimeArchive.Add(GameSaveTime);
+
+            if (LastSaveCode != null)
+                SaveCodeArchive.Add(LastSaveCode);
+
+            if (AccessTimeStamp != null)
+                AccessTimeStampArchive.Add(AccessTimeStamp);
         }
 
         /// <summary>
@@ -70,11 +86,10 @@ namespace CCC
 
             CookieCount = saveCode.CookieCount;
             CookieCountAllTime = saveCode.CookieCountAllTime;
+            GameSaveTime = saveCode.SaveTime;
             LastSaveCode = saveCode.LastSaveCode;
             AccessTimeStamp = saveCode.AccessTimeStamp;
-            SaveTime = saveCode.SaveTime;
             AccessCount++;
         }
-
     }
 }

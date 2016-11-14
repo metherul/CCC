@@ -4,3 +4,9 @@ C:\C# Projects\CCC\CCC\bin\Debug\CCC.pdb
 C:\C# Projects\CCC\CCC\obj\Debug\CCC.csprojResolveAssemblyReference.cache
 C:\C# Projects\CCC\CCC\obj\Debug\CCC.exe
 C:\C# Projects\CCC\CCC\obj\Debug\CCC.pdb
+C:\C# Projects\CCC\CCC\bin\Debug\Raven.Abstractions.dll
+C:\C# Projects\CCC\CCC\bin\Debug\Raven.Client.Lightweight.dll
+C:\C# Projects\CCC\CCC\bin\Debug\Raven.Abstractions.pdb
+C:\C# Projects\CCC\CCC\bin\Debug\Raven.Abstractions.xml
+C:\C# Projects\CCC\CCC\bin\Debug\Raven.Client.Lightweight.pdb
+C:\C# Projects\CCC\CCC\bin\Debug\Raven.Client.Lightweight.xml

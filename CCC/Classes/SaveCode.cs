@@ -26,6 +26,9 @@ namespace CCC
         {
             var saveCode = _saveCode;
             var decodedCode = saveCode.Replace("%2521END%2521", "").Replace("%253D", "=").Replace("%2F", @"/");
+            decodedCode = decodedCode.Replace(@"%21END%21", "").Replace("%3D", "=");
+
+            Console.WriteLine(decodedCode);
             var saveObject = new SaveCode();
             string temp;
             string gameVersion;
@@ -77,6 +80,8 @@ namespace CCC
             {
                 cookieCountAllTime = Math.Round(Convert.ToDecimal(cookieCountAllTime)).ToString();
             }
+
+            Console.WriteLine("COOKIE COUNT ALL TIME: " + cookieCountAllTime);
 
             // Serialize into a SaveCode object.
             saveObject.GameVersion = gameVersion;
